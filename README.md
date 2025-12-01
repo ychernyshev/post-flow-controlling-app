@@ -1,4 +1,6 @@
-# Lightweight web application for managing post-flow operations and post office nodes. 
+# The Post-Flow Controlling App
+
+## Lightweight web application for managing post-flow operations and post office nodes. 
 Designed with modular architecture, autonomy principles, and UI clarity in mind. Built using Django + Vue + Vite + Pinia, optimized for responsive design and dark mode.
 
 ### 🚀 Features
