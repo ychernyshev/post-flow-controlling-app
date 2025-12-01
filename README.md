@@ -1,4 +1,4 @@
-# The Post-Flow Controlling App
+![Project name](./Docs/assets/Copilot_20251130_192102%20SSL%20Error%201%20tlsv1%20alert%20protocol%20version.png)
 
 ## Lightweight web application for managing post-flow operations and post office nodes. 
 Designed with modular architecture, autonomy principles, and UI clarity in mind. Built using Django + Vue + Vite + Pinia, optimized for responsive design and dark mode.
