@@ -1,0 +1,43 @@
+version: "3.9"
+
+services:
+  db_primary:
+    image: postgres:15
+    container_name: db_primary
+    env_file: .env
+    environment:
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    volumes:
+      - postgres_primary_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  db_replica:
+    image: postgres:15
+    container_name: db_replica
+    environment:
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    volumes:
+      - postgres_replica_data:/var/lib/postgresql/data
+    ports:
+      - "5433:5432"
+    # у реальному продакшн тут налаштовується реплікація (streaming replication)
+
+  web:
+    build: .
+    container_name: django_app
+    env_file: .env
+    depends_on:
+      - db_primary
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+
+volumes:
+  postgres_primary_data:
+  postgres_replica_data:
