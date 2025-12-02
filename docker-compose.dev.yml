@@ -28,8 +28,8 @@ services:
 
   web:
     build:
-      context: ./backend
-      dockerfile: Dockerfile.dev
+      context: ./backend/dev
+      dockerfile: Dockerfile
     container_name: django_app
     env_file: .env
     depends_on:

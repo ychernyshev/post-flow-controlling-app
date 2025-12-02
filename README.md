@@ -36,7 +36,7 @@ npm install
 npm run dev
 ```
 
-### ⚡ Usage
+### ⚡ Usage (manual mode)
 
 Run backend server:
 ```shell
@@ -54,16 +54,65 @@ or
 yarn dev
 ```
 
- > Access app at: http://localhost:8000 for backend or http://localhost:5173 for backend (Vite default address)
- 
-### 📂 Project Structure
+ ### Access app at: 
+ - Backend → http://localhost:8000
+ - Frontend (Vite default) → http://localhost:5173
+
+### 🐳 Docker Usage
+#### Development mode
+
+```shell
+docker-compose -f docker-compose.dev.yml up --build
+```
+
+- Django runs with `runserver` on port `8000`.
+- Vue runs with `yarn dev` on port `5173`.
+- No Nginx proxy, direct access to services.
+
+Access:
+
+- Backend → http://localhost:8000
+- Frontend → http://localhost:5173
+
+#### Production mode
+
+```shell
+docker-compose -f docker-compose.prod.yml up --build -d
+```
+
+- Django runs with Gunicorn on port `8000`.
+- Vue is built (`yarn build`) and served via Nginx on port `80`.
+- Nginx proxies `/api/` → Django, `/` → Vue SPA.
+
+Access:
+
+- Unified app → http://localhost/
+
+Stop containers:
+
+```shell
+docker-compose -f docker-compose.dev.yml down
+docker-compose -f docker-compose.prod.yml down
+```
+
+### 📂 Server config structure (Docker)
 
 ```
 post-flow-controlling-app/
 │
-├── flow_app_core/   # Django backend
-├── flow_app_ui/     # Vue frontend
-├── docker-compose.yml
+├── flow_app_ui/          # Vue frontend
+│   ├── dev/Dockerfile    # Dev frontend
+│   └── prod/Dockerfile   # Prod frontend
+├── dev/
+│   └── Dockerfile
+└── prod/
+│       └── Dockerfile
+│
+├── docker-compose.dev.yml
+├── docker-compose.prod.yml
+├── Dockerfile.dev    # Dev backend
+├── Dockerfile        # Prod backend
+├── nginx.conf            # Used only in prod
 └── README.md
 ```
 
