@@ -23,6 +23,3 @@ RUN pip install -r requirements.txt
 
 # Копіюємо весь код проєкту
 COPY . /app/
-
-# Команда за замовчуванням (для dev)
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
