@@ -25,10 +25,9 @@ services:
       - postgres_replica_data:/var/lib/postgresql/data
     ports:
       - "5433:5432"
-    # у реальному продакшн тут налаштовується реплікація (streaming replication)
 
   web:
-    build: .
+    build: ./backend
     container_name: django_app
     env_file: .env
     depends_on:
@@ -36,7 +35,30 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      - .:/app
+      - ./backend:/app
+
+  frontend:
+    build:
+      context: ./frontend/dev
+#      context: ./frontend/prod
+      dockerfile: Dockerfile
+    container_name: vue_app
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app
+    command: [ "npm", "run", "dev" ]
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx_proxy
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - "80:80"
+    depends_on:
+      - web
+      - frontend
 
 volumes:
   postgres_primary_data:
