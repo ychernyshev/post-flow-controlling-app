@@ -32,22 +32,21 @@ services:
     env_file: .env
     depends_on:
       - db_primary
-    ports:
-      - "8000:8000"
+    command: ["gunicorn", "backend.wsgi:application", "--bind", "0.0.0.0:8000"]
+    expose:
+      - "8000"
     volumes:
       - ./backend:/app
 
   frontend:
     build:
-      context: ./frontend/dev
-#      context: ./frontend/prod
+      context: ./flow_app_ui/prod
       dockerfile: Dockerfile
     container_name: vue_app
-    ports:
-      - "3000:3000"
-    volumes:
-      - ./frontend:/app
-    command: [ "npm", "run", "dev" ]
+    expose:
+      - "80"
+    # Vue build копіюється у /usr/share/nginx/html всередині контейнера
+    # Тому тут не потрібні volumes і npm dev
 
   nginx:
     image: nginx:latest
