@@ -11,8 +11,8 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 import os
-
 from pathlib import Path
+
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -31,6 +31,11 @@ DEBUG = os.environ.get('DEBUG', 'True').lower() in ('true', '1', 't')
 
 ALLOWED_HOSTS = []
 
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5432",
+    "http://127.0.0.1:5432",
+]
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -40,11 +45,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'corsheaders',
+    'flow_app_core.apps.FlowAppConfig',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -122,6 +131,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = os.path.join(BASE_DIR, '/static/')
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'flow_app_core/static'),
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
