@@ -95,7 +95,7 @@ docker-compose -f docker-compose.dev.yml down
 docker-compose -f docker-compose.prod.yml down
 ```
 
-### Docker regular commands
+### Docker regular commands for the Django project
 
 Start migrations
 
@@ -133,14 +133,11 @@ post-flow-controlling-app/
 │   ├── dev/Dockerfile    # Dev frontend
 │   └── prod/Dockerfile   # Prod frontend
 ├── dev/
-│   └── Dockerfile
+│   └── Dockerfile        # Dev backend
 └── prod/
-│       └── Dockerfile
-│
+│       └── Dockerfile    # Prod backend
 ├── docker-compose.dev.yml
 ├── docker-compose.prod.yml
-├── Dockerfile.dev    # Dev backend
-├── Dockerfile        # Prod backend
 ├── nginx.conf            # Used only in prod
 └── README.md
 ```
