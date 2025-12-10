@@ -1,5 +1,5 @@
 <script setup lang="ts">
-
+import SearchPanel from "./SearchPanel.vue";
 </script>
 
 <template>
@@ -21,7 +21,7 @@
             <a class="nav-link" href="#">Додати ПВ</a>
           </li>
         </ul>
-<!--        Search panel-->
+        <SearchPanel />
       </div>
     </div>
   </nav>
