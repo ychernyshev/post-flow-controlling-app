@@ -3,7 +3,15 @@
 </script>
 
 <template>
-  <TopNav />
+  <header>
+    <TopNav />
+  </header>
+  <main>
+
+  </main>
+  <footer>
+
+  </footer>
 </template>
 
 <style scoped>
