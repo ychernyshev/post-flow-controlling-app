@@ -3,6 +3,7 @@
 </script>
 
 <template>
+  <h3>Edit Entry</h3>
 
 </template>
 
