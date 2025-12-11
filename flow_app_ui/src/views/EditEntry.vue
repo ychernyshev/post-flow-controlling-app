@@ -2,9 +2,9 @@
 
 </script>
 
-<template>
-  <h3>Edit Entry</h3>
-
+<template><div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Edit Entry</h1>
+  </div>
 </template>
 
 <style scoped>
