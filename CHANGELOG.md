@@ -55,5 +55,30 @@ This project is still in early development — no official release yet.
 - **UI elements**:  
   - Added search panel.  
   - Added navbar.
+
+### Frontend
+### [2025-12-10 0.7.0] - Changed
+- **App.vue**: removed example data from the component.
+- **App.vue**: added TopNav component.
+- **TopNav.vue**: integrated search panel into the top navigation.
+
+### [2025-12-11 0.8.0] - Added
+- **SideBar.vue** as a side navigation component.
+- **Vue Router** setup and integration.
+- New views:
+  - Reports view
+  - Streets view
+- Example content applied across all pages.
+
+### Changed
+- **SideBar.vue**: fixed code based on Bootstrap free template.
+- SideBar displayed as a visual component.
+- Routes updated according to technical specifications.
+- Current routes added to SideBar.
+- `<router-view>` integrated to display component content after navigation.
+
+### Fixed
+- Search panel style reverted to default (long input in top navigation).
+
     
 
