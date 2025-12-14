@@ -80,5 +80,8 @@ This project is still in early development — no official release yet.
 ### Fixed
 - Search panel style reverted to default (long input in top navigation).
 
+### [2025-12-14 0.9.0] - Added
+- 
+
     
 
