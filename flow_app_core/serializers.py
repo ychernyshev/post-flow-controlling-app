@@ -1,10 +1,10 @@
 from rest_framework import serializers
 
-from flow_app_core.models import postageItemModel
+from flow_app_core.models import PostageItemModel
 
 
 class PostageItemSerializer(serializers.ModelSerializer):
     class Meta:
-        model = postageItemModel
+        model = PostageItemModel
         fields = '__all__'
 

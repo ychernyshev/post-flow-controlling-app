@@ -7,13 +7,13 @@ from rest_framework.decorators import action
 from rest_framework.response import Response
 from rest_framework import status
 
-from flow_app_core.models import postageItemModel
+from flow_app_core.models import PostageItemModel
 from flow_app_core.serializers import PostageItemSerializer
 
 
 # Create your views here.
 class DataPostageItemViewSet(viewsets.ModelViewSet):
-    queryset = postageItemModel.objects.all()
+    queryset = PostageItemModel.objects.all()
     serializer_class = PostageItemSerializer
 
     # Marking if the package was delivered
