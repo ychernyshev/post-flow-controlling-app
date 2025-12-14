@@ -5,5 +5,5 @@ from flow_app_core.models import PostageItemModel
 
 # Register your models here.
 @admin.register(PostageItemModel)
-class postageItemAdmin(admin.ModelAdmin):
+class PostageItemAdmin(admin.ModelAdmin):
     list_dislpay = ['track_number', 'recipient_street', 'delivered_date']
