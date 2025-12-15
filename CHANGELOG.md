@@ -80,8 +80,27 @@ This project is still in early development — no official release yet.
 ### Fixed
 - Search panel style reverted to default (long input in top navigation).
 
-### [2025-12-14 0.9.0] - Added
-- 
+### [2025-12-14 - 2025-12-15 0.9.0]
+### Backend Models & Admin
+- **StreetModel added**: Streets moved into a separate `StreetModel` for better control.
+- **PostageItemModel class name**: Renamed `postageItemModel` → `PostageItemModel` to follow Python class naming conventions.
+- **PostageItemAdmin class name**: Renamed `postageItemAdmin` → `PostageItemAdmin` for consistency.
+- **Update admin.py**: Fixed syntax error in `list_display`.
+
+### UI Template Development
+- **Template skeleton**: Added initial HTML template skeleton for future UI development (to be ported into Vue).
+- **Bootstrap update**: Upgraded Bootstrap from v5.3.3 → v5.3.8.
+- **Dashboard draft design**: Created draft design for dashboard page.
+- **Streets draft design**: Created draft design for streets page.
+- **View → Page renaming**: Renamed template files to emphasize page structure:  
+  - `reports_view` → `reports_page`  
+  - `search_view` → `search_page`  
+  - `streets_view` → `streets_page`
+- **Add Entry draft design**: Added draft design for Add Entry page.
+- **Edit Entry draft design**: Added draft design for Edit Entry page.
+- **Entries History draft design**: Added draft design for Entries History page.
+- **Add Entry data field**: Changed data field type from text → date.
+- **Sidebar menu changes**: Updated sidebar menu items to meet project requirements.
 
     
 
