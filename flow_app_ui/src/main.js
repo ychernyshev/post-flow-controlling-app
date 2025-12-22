@@ -3,6 +3,6 @@ import App from './App.vue'
 import router from './router'
 // import './style.css'
 // import './tailwind.css'
-import './assets/bootstrap/bootstrap.min.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 createApp(App).use(router).mount('#app')
