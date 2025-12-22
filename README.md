@@ -91,8 +91,8 @@ Access:
 Stop containers:
 
 ```shell
-docker-compose -f docker-compose.dev.yml down
-docker-compose -f docker-compose.prod.yml down
+sudo docker-compose -f docker-compose.dev.yml down
+sudo docker-compose -f docker-compose.prod.yml down
 ```
 
 ### Docker regular commands for the Django project
@@ -100,25 +100,25 @@ docker-compose -f docker-compose.prod.yml down
 Start migrations
 
 ```shell
-docker-compose run web python manage.py migrate
+sudo docker-compose run web python manage.py migrate
 ```
 
 or, if the container is working
 
 ```shell
-docker-compose exec web python manage.py migrate
+sudo docker-compose exec web python manage.py migrate
 ```
 
 If docker-compose has a specific name, use a command:
 
 ```shell
-docker compose -f docker-compose.dev.yml exec web python manage.py ...
+sudo docker compose -f docker-compose.dev.yml exec web python manage.py ...
 ```
 
 or new CLI
 
 ```shell
-docker compose -f docker-compose.dev.yml exec web python manage.py ...
+sudo docker compose -f docker-compose.dev.yml exec web python manage.py ...
 ```
 
 with `makemigrations`, `migrate`, `createsuperuser`, etc.
