@@ -102,5 +102,19 @@ This project is still in early development — no official release yet.
 - **Add Entry data field**: Changed data field type from text → date.
 - **Sidebar menu changes**: Updated sidebar menu items to meet project requirements.
 
+### [22.12.2025 0.10.0]
+### Added
+- Bootstrap 5.3.8 as a dependency in `node_modules` and `package.json`.
+- Axios as a dependency in `node_modules` and `package.json`.
+- New hook `useAxios` for API communication.
+- Extended `useAxios` with `get`, `add`, and `update` methods.
+- Basic `get` functionality in `EntriesHistory.vue`.
+
+### Changed
+- Updated Bootstrap source reference in `main.js`.
+- Updated `README.md` to include `sudo` before Docker commands for Linux environments.
+
+### Fixed
+- Allowed frontend port `8080` in CORS policy (`CORS_ALLOWED_ORIGINS`).
     
 
