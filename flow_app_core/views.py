@@ -29,6 +29,6 @@ class DataPostageItemViewSet(viewsets.ModelViewSet):
 
     # Searching
     filter_backends = [DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter]
-    filterset_fields = ['track_number', 'delivered_date', 'street']
-    search_fields = ['street']
+    filterset_fields = ['track_number', 'delivered_date']
+    search_fields = ['recipient_street']
     ordering_fields = ['delivered_date']
