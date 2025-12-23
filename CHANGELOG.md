@@ -117,4 +117,24 @@ This project is still in early development — no official release yet.
 ### Fixed
 - Allowed frontend port `8080` in CORS policy (`CORS_ALLOWED_ORIGINS`).
     
+# Changelog
+
+## [2025-12-23 0.11.0] 
+
+### Backend
+- Refactored `PostageItemModel`:
+  - Replaced `StreetsModel` ForeignKey with a static `choices` list for streets.
+  - Simplified filtering logic by using `CharField` with predefined street codes.
+- Fixed `django_filters` error (`_set_choices` AttributeError) by explicitly defining filter behavior for `recipient_street`.
+- Added `mark_delivered` custom action in `DataPostageItemViewSet` to update `delivered_date`.
+
+### Frontend (Vue)
+- Integrated Axios hook (`useAxios`) with proper `/api/postage/` endpoint prefix.
+- Implemented form for adding new postage items:
+  - Input fields for `track_number`, `recipient_street`, and `delivered_date`.
+  - `<select>` element with all predefined street options.
+  - `datetime-local` input auto-populates with current date/time.
+- Added error handling for POST requests (404 issue resolved by correcting API base URL).
+- Displayed newly created items immediately in the list without page reload.
+
 
