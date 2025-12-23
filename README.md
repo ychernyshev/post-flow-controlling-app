@@ -123,6 +123,12 @@ sudo docker compose -f docker-compose.dev.yml exec web python manage.py ...
 
 with `makemigrations`, `migrate`, `createsuperuser`, etc.
 
+### Checking front-end server log
+
+```shell
+udo docker compose -f docker-compose.dev.yml logs frontend
+```
+
 
 ### 📂 Server config structure (Docker)
 
