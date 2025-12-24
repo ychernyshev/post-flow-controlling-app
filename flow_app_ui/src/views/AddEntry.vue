@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from "vue"
 import { useAxios } from "../composables/useAxios.js"
+import streets from "../constants/streets.js"
 
 function getNow() {
   const now = new Date()
@@ -29,22 +30,6 @@ async function addItem() {
   } catch (err) {
     console.error("Error adding item:", err)
   }
-}
-
-const streets = {
-  'SHKI': 'Шкільна',
-  'GONT': 'Гонти',
-  'LUKR': 'Лесі Українки',
-  'MAZE': 'Мазепи',
-  'BOGU': 'Богуна',
-  'HMEL': 'Б. Хмельницького',
-  'LISN': 'Лісна',
-  'PIDL': 'Підлісна',
-  'STUS': 'Стуса',
-  'FRAN': 'І. Франка',
-  'SAGA': 'Сагайдачного',
-  'SHEV': 'Т. Шевченка',
-  'BAND': 'С. Бандери'
 }
 
 
