@@ -2,7 +2,7 @@
   import {ref, onMounted} from "vue";
   import {useAxios} from "../composables/useAxios.js";
 
-  const apiItems = useAxios('api/postage');
+  const apiItems = useAxios('postage');
 
   const items = ref([])
 
