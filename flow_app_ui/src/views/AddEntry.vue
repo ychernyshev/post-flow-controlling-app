@@ -31,6 +31,23 @@ async function addItem() {
   }
 }
 
+const streets = {
+  'SHKI': 'Шкільна',
+  'GONT': 'Гонти',
+  'LUKR': 'Лесі Українки',
+  'MAZE': 'Мазепи',
+  'BOGU': 'Богуна',
+  'HMEL': 'Б. Хмельницького',
+  'LISN': 'Лісна',
+  'PIDL': 'Підлісна',
+  'STUS': 'Стуса',
+  'FRAN': 'І. Франка',
+  'SAGA': 'Сагайдачного',
+  'SHEV': 'Т. Шевченка',
+  'BAND': 'С. Бандери'
+}
+
+
 loadItems()
 </script>
 
@@ -40,7 +57,7 @@ loadItems()
   </div>
   <ul>
     <li v-for="item in items" :key="item.id">
-      {{ item.track_number }} — {{ item.recipient_street }} — {{ item.delivered_date }}
+      {{ item.track_number }} — {{ streets[item.recipient_street] }} — {{ item.delivered_date }}
     </li>
   </ul>
 
