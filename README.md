@@ -153,4 +153,12 @@ Pull requests are welcome. For major changes, open an issue first to discuss wha
 
 
 ### 📜 License
-MIT License — free to use, modify, and distribute.
+This project is licensed under the MIT License.  
+You are free to use, modify, and distribute the code, subject to the following conditions:
+
+- **Project code** © 2025 Eugene Chernyshev — MIT License.  
+- **UI template** Sof UI Dashboard © 2021 Creative Tim — MIT License.  
+  See the original license here: [Creative Tim MIT License](https://github.com/creativetimofficial/soft-ui-dashboard/blob/main/LICENSE.md)
+
+Both licenses are included in the repository.  
+Please make sure to retain the copyright notices and license texts in all copies or substantial portions of the software.
