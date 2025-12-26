@@ -13,6 +13,7 @@ const items = ref([])
 const newItem = ref({
   track_number: "",
   recipient_street: "",
+  recipient_build: "",
   small_package: false,
   delivered_date: getNow()
 })
@@ -43,7 +44,7 @@ loadItems()
   </div>
   <ul>
     <li v-for="item in items" :key="item.id">
-      {{ item.track_number }} — {{ streets[item.recipient_street] }} <span v-if="item.small_package"> — Маленька посилка</span> — {{ item.delivered_date }}
+      {{ item.track_number }} — {{ streets[item.recipient_street] }} {{ item.recipient_build }} <span v-if="item.small_package"> — Маленька посилка</span> — {{ item.delivered_date }}
     </li>
   </ul>
 
