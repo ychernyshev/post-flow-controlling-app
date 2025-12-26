@@ -13,6 +13,7 @@ const items = ref([])
 const newItem = ref({
   track_number: "",
   recipient_street: "",
+  small_package: false,
   delivered_date: getNow()
 })
 
@@ -65,6 +66,8 @@ loadItems()
       <option value="SHEV">Т. Шевченка</option>
       <option value="BAND">С. Бандери</option>
     </select>
+    <label for="small_package">Маленька посилка</label>
+    <input type="checkbox" v-model="newItem.small_package" name="small_package">
     <input type="datetime-local" v-model="newItem.delivered_date" class="form-control" />
     <button type="submit" class="btn btn-outline-success">Add</button>
   </form>
