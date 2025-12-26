@@ -50,7 +50,7 @@ loadItems()
 
   <h3>Add new entry</h3>
   <form @submit.prevent="addItem">
-    <input v-model="newItem.track_number" class="form-control" placeholder="Track number" maxlength="13" minlength="13"/>
+    <input v-model="newItem.track_number" class="form-control" placeholder="Номер посилки" maxlength="13" minlength="13"/>
     <select v-model="newItem.recipient_street" class="form-control">
       <option value="">-- Оберіть вулицю --</option>
       <option value="SHKI">Шкільна</option>
@@ -67,6 +67,7 @@ loadItems()
       <option value="SHEV">Т. Шевченка</option>
       <option value="BAND">С. Бандери</option>
     </select>
+    <input type="text" v-model="newItem.recipient_build" class="form-control" placeholder="Номер будинку">
     <label for="small_package">Маленька посилка</label>
     <input type="checkbox" v-model="newItem.small_package" name="small_package">
     <input type="datetime-local" v-model="newItem.delivered_date" class="form-control" />
