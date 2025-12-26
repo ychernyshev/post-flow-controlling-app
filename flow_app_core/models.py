@@ -24,6 +24,7 @@ class PostageItemModel(models.Model):
 
     track_number = models.CharField(max_length=13, verbose_name='Track number')
     recipient_street = models.CharField(choices=STREETS, max_length=4, verbose_name='Recipient street')
+    recipient_build = models.CharField(max_length=5, verbose_name='Recipient build')
     small_package = models.BooleanField(default=False, verbose_name='Small package')
     delivered_date = models.DateTimeField()
 
