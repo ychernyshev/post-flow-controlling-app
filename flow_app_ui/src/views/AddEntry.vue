@@ -43,7 +43,7 @@ loadItems()
   </div>
   <ul>
     <li v-for="item in items" :key="item.id">
-      {{ item.track_number }} — {{ streets[item.recipient_street] }} — {{ item.delivered_date }}
+      {{ item.track_number }} — {{ streets[item.recipient_street] }} <span v-if="item.small_package"> — Маленька посилка</span> — {{ item.delivered_date }}
     </li>
   </ul>
 
