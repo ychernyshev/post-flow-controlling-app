@@ -1,11 +1,10 @@
 from django.shortcuts import render
 from django.utils import timezone
-
-from rest_framework import viewsets, filters
 from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework import status
+from rest_framework import viewsets, filters
 from rest_framework.decorators import action
 from rest_framework.response import Response
-from rest_framework import status
 
 from flow_app_core.models import PostageItemModel
 from flow_app_core.serializers import PostageItemSerializer
@@ -32,3 +31,11 @@ class DataPostageItemViewSet(viewsets.ModelViewSet):
     filterset_fields = ['track_number', 'delivered_date']
     search_fields = ['recipient_street']
     ordering_fields = ['delivered_date']
+
+
+def search_engine(request):
+    query = request.GET.get('q')
+    if query:
+        results = PostageItemModel.objects.filter(name__icontains=query)
+        data = [{"track_number": PostageItemModel.track_number, "recipient_street": PostageItemModel.recipient_street,
+                 "delivered_date": PostageItemModel.delivered_date, "small_package": PostageItemModel.small_package,} for result in results]
