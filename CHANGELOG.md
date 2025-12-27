@@ -137,4 +137,31 @@ This project is still in early development — no official release yet.
 - Added error handling for POST requests (404 issue resolved by correcting API base URL).
 - Displayed newly created items immediately in the list without page reload.
 
+## [2025-12-25 - 2025-12-27 0.12.0]
+### Added
+- **Model fields**
+  - Added `small_package` boolean field to `PostageItemModel` (visible in Django Admin).
+  - Added `recipient_build` CharField to `PostageItemModel` (visible in Django Admin, with migrations).
+
+- **Frontend (Vue.js)**
+  - `AddEntry.vue`: added `small_package` checkbox form field.
+  - `AddEntry.vue`: visualisation of `small_package` after fetching data from DB.
+  - `AddEntry.vue`: added `recipient_build` field to the add entry form.
+  - `AddEntry.vue`: display of `recipient_build` data on the page.
+  - `SearchPanel.vue`: integrated search engine component.
+  - `Dashboard.vue`: added template with examples.
+  - `EntriesHistory.vue`: added template with examples.
+  - `AddEntry.vue`: added template with examples.
+
+- **Backend (Django)**
+  - Implemented search engine endpoint in `views.py`.
+  - Completed search engine endpoint logic.
+  - Added search route in `urls.py`.
+
+- **Assets**
+  - Included template assets in `src/assets`.
+  - Updated asset URLs in `index.html`.
+
+---
+
 
