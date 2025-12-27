@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.utils import timezone
+from django.http import JsonResponse
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import status
 from rest_framework import viewsets, filters
@@ -39,3 +40,5 @@ def search_engine(request):
         results = PostageItemModel.objects.filter(name__icontains=query)
         data = [{"track_number": PostageItemModel.track_number, "recipient_street": PostageItemModel.recipient_street,
                  "delivered_date": PostageItemModel.delivered_date, "small_package": PostageItemModel.small_package,} for result in results]
+        return JsonResponse(data, safe=False)
+    return None
