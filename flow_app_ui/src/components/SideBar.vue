@@ -62,7 +62,7 @@
     <div class="collapse navbar-collapse  w-auto" id="sidenav-collapse-main">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <router-link to="/dashboard" class="nav-link active" aria-current="page">
+          <router-link to="/dashboard" class="nav-link" active-class="active" aria-current="page">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 45 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>shop </title>
@@ -82,7 +82,7 @@
           </router-link>
         </li>
         <li class="nav-item">
-          <router-link to="/streets" class="nav-link">
+          <router-link to="/streets" class="nav-link" active-class="active">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>office</title>
@@ -102,7 +102,7 @@
           </router-link>
         </li>
         <li class="nav-item">
-          <router-link to="/reports" class="nav-link">
+          <router-link to="/reports" class="nav-link" active-class="active">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 43 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>credit-card</title>
@@ -128,7 +128,7 @@
           </router-link>
         </li>
         <li class="nav-item">
-          <router-link to="/entries_history" class="nav-link">
+          <router-link to="/entries_history" class="nav-link" active-class="active">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>settings</title>
@@ -152,7 +152,7 @@
 <!--          <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Account pages</h6>-->
 <!--        </li>-->
         <li class="nav-item">
-          <router-link to="/add_entry" class="nav-link">
+          <router-link to="/add_entry" class="nav-link" active-class="active">
             <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
               <svg width="12px" height="12px" viewBox="0 0 46 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>customer-support</title>
