@@ -164,4 +164,18 @@ This project is still in early development — no official release yet.
 
 ---
 
+## [05.01.2026 0.13.0]
+
+### Changed
+- **SideBar.vue**: Renewed the code using the new Soft UI Dashboard template design.
+- **Dashboard.vue**: Removed SideBar code example.
+- **AddEntry.vue**: Removed SideBar code example.
+- **EntriesHistory.vue**: Removed SideBar code example.
+- **router/index.js**: Fixed "reports" and "streets" component names to resolve bug preventing `ReportsView` from rendering.
+- **SideBar.vue**: Added active route styling (`active-class="active"`).
+
+### Added
+- **StreetsPage.vue**: Added page example content.
+- **ReportsView.vue**: Added page example content.
+
 
